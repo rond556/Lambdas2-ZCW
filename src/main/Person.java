@@ -1,5 +1,3 @@
-package java;
-
 import java.time.LocalDate;
 
 public class Person {

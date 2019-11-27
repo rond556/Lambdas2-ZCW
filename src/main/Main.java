@@ -1,10 +1,7 @@
-package java;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class MainTest implements CheckPerson{
+public class Main implements CheckPerson {
 
     public static void printPersons(List<Person> roster, CheckPerson tester) {
         for (Person p : roster) {
@@ -14,7 +11,7 @@ public class MainTest implements CheckPerson{
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ArrayList<Person> personList = new ArrayList<>();
         Person terra = new Person("terra", 18, Person.Sex.FEMALE, "terra@esper.com");
         Person locke = new Person("locke", 21, Person.Sex.MALE, "locke@treasurehunter.org");
@@ -26,8 +23,7 @@ public class MainTest implements CheckPerson{
         personList.add(edgar);
 
 
-
-        class overTwenty implements CheckPerson{
+        class overTwenty implements CheckPerson {
             @Override
             public boolean test(Person p) {
                 return p.getAge() > 20;
@@ -36,21 +32,21 @@ public class MainTest implements CheckPerson{
         printPersons(personList, new overTwenty());
 
 
-
         printPersons(personList, new CheckPerson() {
-                    public boolean test(Person p) {
+            @Override
+            public boolean test(Person p) {
                         return p.getAge() > 20;
                     }
-                }
+            }
         );
 
-        printPersons(personList,(Person p) -> p.getAge() == 20);
+        printPersons(personList, (Person p) -> p.getAge() == 20);
     }
 
 
 
     @Override
     public boolean test(Person p) {
-        return p.gender.equals(Person.Sex.FEMALE);
+        return false;
     }
 }
