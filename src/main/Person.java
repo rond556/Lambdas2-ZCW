@@ -7,7 +7,6 @@ public class Person {
         }
 
         String name;
-        LocalDate birthday;
         Integer age;
         Sex gender;
         String emailAddress;
@@ -15,7 +14,6 @@ public class Person {
         public Person(String name, Integer age, Sex gender, String emailaddress){
             this.name = name;
             this.age = age;
-            this.birthday = LocalDate.MAX;
             this.gender = gender;
             this.emailAddress = emailaddress;
 
@@ -27,14 +25,6 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public LocalDate getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
     }
 
     public Integer getAge() {
@@ -62,7 +52,8 @@ public class Person {
     }
 
     public void printPerson() {
-        System.out.println(this.toString());
+        System.out.println(String.format("Person Name: %s, Age: %d, Gender: %s, Email Address: %s\n",
+                name, age, gender, emailAddress));
     }
 }
 
