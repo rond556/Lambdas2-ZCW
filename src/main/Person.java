@@ -52,7 +52,7 @@ public class Person {
     }
 
     public void printPerson() {
-        System.out.println(String.format("Person Name: %s, Age: %d, Gender: %s, Email Address: %s\n",
+        System.out.println(String.format("Person Name: %s, Age: %d, Gender: %s, Email Address: %s",
                 name, age, gender, emailAddress));
     }
 }

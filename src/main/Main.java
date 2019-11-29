@@ -21,8 +21,6 @@ public class Main implements CheckPerson {
         personList.add(locke);
         personList.add(sabin);
         personList.add(edgar);
-
-
         class getGender implements CheckPerson {
             @Override
             public boolean test(Person p) {
@@ -30,8 +28,6 @@ public class Main implements CheckPerson {
             }
         }
         printPersons(personList, new getGender());
-
-
         printPersons(personList, new CheckPerson() {
             @Override
             public boolean test(Person p) {
@@ -39,7 +35,6 @@ public class Main implements CheckPerson {
                     }
             }
         );
-
         printPersons(personList, (Person p) -> p.getGender().equals(Person.Sex.FEMALE));
     }
 
